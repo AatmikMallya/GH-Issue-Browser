@@ -1,0 +1,44 @@
+table {
+    width: 100%;
+    background-color: rgb(240, 241, 243);
+}
+
+.mat-form-field {
+    margin-top: 50px!important;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 14px;
+    width: 80%;
+}
+
+td, th {
+    width: 25%;
+}
+
+.mat-elevation-z8 {
+    margin-top: 10px!important;
+    width: 80%;
+    margin: auto;
+}
+
+.mat-paginator {
+    background-color: rgb(249, 249, 250)!important;
+}
+
+span {
+    padding: 3px;
+    border-radius: 3px;
+    margin: auto 1px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.mat-column-number      { width: 10%; }
+.mat-column-user        { width: 10%; }
+.mat-column-title       { width: 34%; }
+.mat-column-comments    { width: 12%; text-align: center;}
+.mat-column-created_at  { width: 12%; }
+.mat-column-updated_at  { width: 12%; }
+.mat-column-state       { width: 10%; }

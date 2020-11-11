@@ -1,0 +1,59 @@
+a, h1, h2 {
+    display: inline;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+a {
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+/* Flex Parent */
+.header-container {
+    z-index: 10;
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    display: flex;
+    justify-content: flex-start;
+    height: 80px;
+    border-bottom: 1px solid rgba(4, 0, 44, 0.404);
+    background-color: rgb(236, 238, 240);
+
+    box-shadow: 0 2px 8px 2px rgba(28, 31, 34, 0.4);
+}
+
+#header-title-container {
+    color: black!important;
+    width: 15%;
+    min-width: 205px;
+    /* Vertically centers title within the container */
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+#description-container {
+    margin-top: 10px;
+    margin-left: 5px;
+    margin-right: 20px;
+    flex-basis: 500px;
+    height: 100%;
+}
+
+#header-title {
+    color: black!important;
+    font-size: 40px;
+    font-weight: 500;
+    margin: auto;
+}
+
+#description {
+    margin-top: 27px;
+    width: 100%;
+}
+
+#header-title:hover {
+    color: rgba(255, 255, 255, 0.6);
+}

@@ -1,0 +1,39 @@
+<div id="issue-container">
+    <!-- Issue header -->
+    <h1>
+        <a class="header-link" href={{issue?.html_url}} target="_blank">#{{issue?.number}}</a>: {{issue?.title}} 
+        <span *ngFor="let label of issue?.labels" [ngStyle]="{'background-color': '#'+label.color }">
+            <a class="header-link" href={{label.url}} target="_blank">{{label.name}}</a>
+        </span>
+        <br>
+        <mat-divider></mat-divider>
+    </h1>
+    <h3>
+        Created by <a href={{issue?.user.html_url}} target="_blank">{{issue?.user.login}}</a>: last updated {{issue?.updated_at.toLocaleString()}}.
+        Currently <div class="state" [ngStyle]="issue?.state === 'open' ? {'color': 'green'} : {'color': 'red'}">{{issue?.state}}</div>.
+    </h3>
+
+    <!-- Poster's comment -->
+    <div class='comment-container'>
+        <div class="author-container">
+            <a href={{issue?.user.html_url}} target="_blank"><img src={{issue?.user.avatar_url}}/></a>
+            <div class="author-info">
+                <a href={{issue?.user.html_url}} target="_blank" >{{issue?.user.login}}</a> commented on {{issue?.created_at.toLocaleString()}}
+            </div>
+        </div>
+        <div class="body-container" [innerHTML]="issue?.body.replaceAll('\n','\<br>') | safeHTML"></div>
+    </div>
+
+    <!-- Other comments -->
+    <div class='comment-container' *ngFor="let comment of comments">
+        <div class="author-container">
+            <a href={{comment?.user.html_url}} target="_blank"><img src={{comment?.user.avatar_url}}/></a>
+            <div class="author-info">
+                <a href={{comment?.user.html_url}} target="_blank" >{{comment?.user.login}}</a> commented on {{comment?.created_at.toLocaleString()}}
+            </div>
+        </div>
+        <div class="body-container comment" [innerHTML]="comment?.body.replaceAll('\n','\<br>') | safeHTML"></div>
+    </div>
+
+    <h2 routerLink=""><mat-icon aria-hidden="false" class="home-icon" aria-label="home icon">home</mat-icon> Go home</h2>
+</div>
